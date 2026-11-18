@@ -1,0 +1,43 @@
+{
+  "doctype": "DocType",
+  "name": "Followup Team Member",
+  "module": "Project Followup",
+  "istable": 1,
+  "editable_grid": 1,
+  "field_order": [
+    "employee",
+    "user",
+    "specialization",
+    "responsibilities"
+  ],
+  "fields": [
+    {
+      "fieldname": "employee",
+      "fieldtype": "Link",
+      "options": "Employee",
+      "label": "الموظف",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "user",
+      "fieldtype": "Link",
+      "options": "User",
+      "label": "حساب الموظف",
+      "read_only": 1
+    },
+    {
+      "fieldname": "specialization",
+      "fieldtype": "Data",
+      "label": "الاختصاص / دور العضو",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "responsibilities",
+      "fieldtype": "Small Text",
+      "label": "مسؤوليات العضو"
+    }
+  ],
+  "permissions": []
+}

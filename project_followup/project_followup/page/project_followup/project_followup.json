@@ -1,0 +1,13 @@
+{
+  "doctype": "Page",
+  "name": "project-followup",
+  "page_name": "project-followup",
+  "module": "Project Followup",
+  "title": "متابعة المشاريع واللجان",
+  "standard": "Yes",
+  "roles": [
+    {
+      "role": "All"
+    }
+  ]
+}

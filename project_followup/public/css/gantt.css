@@ -1,0 +1,104 @@
+.gantt-modern.pf-readable-gantt {
+ --pf-ink: var(--text-color, #172033);
+ --pf-muted: var(--text-muted, #667085);
+ --pf-border: var(--border-color, #e4e7ec);
+ --pf-surface: var(--card-bg, #fff);
+ --pf-subtle: var(--subtle-fg, #f8fafc);
+ --pf-primary: #2563eb;
+ height: auto !important;
+ min-height: 0 !important;
+ overflow: hidden !important;
+ border: 1px solid var(--pf-border);
+ border-radius: 16px;
+ background: var(--pf-surface);
+ box-shadow: 0 1px 2px rgb(16 24 40 / 4%), 0 8px 24px rgb(16 24 40 / 6%);
+}
+
+.pf-readable-gantt .pf-gantt-toolbar { display: flex; gap: 20px; align-items: center; justify-content: space-between; flex-wrap: wrap; padding: 14px 18px; border-bottom: 1px solid var(--pf-border); background: linear-gradient(180deg, color-mix(in srgb, var(--pf-surface) 96%, #2563eb 4%), var(--pf-surface)); }
+.pf-readable-gantt .pf-gantt-toolbar-copy { display: grid; gap: 2px; min-width: 250px; }
+.pf-readable-gantt .pf-gantt-title { color: var(--pf-ink); font-size: 14px; font-weight: 750; line-height: 1.5; }
+.pf-readable-gantt .pf-gantt-hint { color: var(--pf-muted); font-size: 11px; line-height: 1.6; }
+.pf-readable-gantt .pf-gantt-tools { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.pf-readable-gantt .pf-summary-chip { display: inline-flex; align-items: center; min-height: 26px; padding: 3px 9px; border: 1px solid var(--pf-border); border-radius: 999px; background: var(--pf-subtle); color: var(--pf-muted); font-size: 10px; font-weight: 650; white-space: nowrap; }
+.pf-readable-gantt .pf-summary-completed { background: #ecfdf3; border-color: #abefc6; color: #067647; }
+.pf-readable-gantt .pf-summary-overdue { background: #fef3f2; border-color: #fecdca; color: #b42318; }
+.pf-readable-gantt .pf-gantt-toggle { display: inline-flex; gap: 7px; align-items: center; min-height: 28px; margin: 0; padding: 3px 9px; border: 1px solid var(--pf-border); border-radius: 8px; background: var(--pf-surface); color: var(--pf-muted); cursor: pointer; font-size: 10px; white-space: nowrap; }
+.pf-readable-gantt .pf-gantt-toggle input { accent-color: var(--pf-primary); }
+.pf-readable-gantt .pf-clear-selection { border-radius: 8px; }
+
+.pf-readable-gantt .pf-gantt-layout { display: grid; grid-template-columns: minmax(0, 1fr) 360px; direction: ltr; align-items: start; min-width: 760px; }
+.pf-readable-gantt .pf-timeline { position: relative; min-width: 0; width: 100%; direction: ltr; overflow-x: auto; overflow-y: hidden; border-radius: 0; background: var(--pf-surface); scrollbar-width: thin; scrollbar-color: #cbd5e1 transparent; }
+.pf-readable-gantt .pf-timeline::-webkit-scrollbar { height: 9px; }
+.pf-readable-gantt .pf-timeline::-webkit-scrollbar-thumb { background: #cbd5e1; border: 2px solid transparent; border-radius: 999px; background-clip: padding-box; }
+.pf-readable-gantt .pf-timeline svg { display: block; direction: ltr; }
+.pf-readable-gantt .pf-gantt-labels { min-width: 0; background: var(--pf-surface); border-left: 1px solid var(--pf-border); box-shadow: -8px 0 20px rgb(16 24 40 / 3%); }
+.pf-readable-gantt .pf-gantt-label-header { box-sizing: border-box; height: 72px; display: flex; align-items: center; justify-content: space-between; padding: 16px; border-bottom: 1px solid var(--pf-border); color: var(--pf-ink); font-size: 12px; font-weight: 700; }
+.pf-readable-gantt .pf-gantt-label-header small { display: inline-grid; place-items: center; min-width: 24px; height: 24px; padding: 0 7px; border-radius: 999px; background: #eff6ff; color: #175cd3; font-size: 10px; font-weight: 750; }
+
+.pf-readable-gantt .pf-task-row { box-sizing: border-box; height: 72px; display: flex; gap: 11px; align-items: center; padding: 9px 12px; border-bottom: 1px solid var(--pf-border); transition: background-color .16s ease, box-shadow .16s ease; }
+.pf-readable-gantt .pf-task-row:last-child { border-bottom: 0; }
+.pf-readable-gantt .pf-task-row:hover { background: color-mix(in srgb, var(--pf-subtle) 84%, #dbeafe 16%); }
+.pf-readable-gantt .pf-task-row.pf-selected { background: #eff6ff; box-shadow: inset -3px 0 var(--pf-primary); }
+.pf-readable-gantt .pf-task-number { flex: 0 0 31px; width: 31px; height: 31px; border: 1px solid var(--pf-border); border-radius: 9px; background: var(--pf-surface); color: var(--pf-ink); font-size: 11px; font-weight: 750; cursor: pointer; transition: transform .16s ease, color .16s ease, border-color .16s ease, background .16s ease; }
+.pf-readable-gantt .pf-task-number:hover { transform: translateY(-1px); border-color: #84adff; color: #175cd3; }
+.pf-readable-gantt .pf-selected .pf-task-number { color: #fff; background: var(--pf-primary); border-color: var(--pf-primary); box-shadow: 0 3px 8px rgb(37 99 235 / 24%); }
+.pf-readable-gantt .pf-task-content { min-width: 0; flex: 1; }
+.pf-readable-gantt .pf-task-title { display: -webkit-box; max-height: 35px; overflow: hidden; margin: 0 0 5px; padding: 0; border: 0; background: transparent; color: var(--pf-ink); font-size: 12px; font-weight: 650; line-height: 1.45; text-align: right; cursor: pointer; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.pf-readable-gantt .pf-task-title:hover { color: #175cd3; text-decoration: none; }
+.pf-readable-gantt .pf-task-meta { display: flex; align-items: center; gap: 7px; min-width: 0; color: var(--pf-muted); font-size: 9.5px; white-space: nowrap; }
+.pf-readable-gantt .pf-task-meta > span:first-child { direction: ltr; unicode-bidi: isolate; }
+.pf-readable-gantt .pf-task-status { display: inline-flex; align-items: center; min-height: 20px; padding: 1px 7px; border-radius: 999px; background: #f2f4f7; color: #475467; font-size: 9px; font-weight: 700; }
+.pf-readable-gantt .pf-status-working { background: #eff8ff; color: #175cd3; }
+.pf-readable-gantt .pf-status-review { background: #fffaeb; color: #b54708; }
+.pf-readable-gantt .pf-status-completed { background: #ecfdf3; color: #067647; }
+.pf-readable-gantt .pf-status-cancelled { background: #f2f4f7; color: #667085; }
+.pf-readable-gantt .pf-status-overdue { background: #fef3f2; color: #b42318; }
+
+.pf-readable-gantt .gantt .bar-label { fill: #173554 !important; font-size: 11px; font-weight: 750; direction: ltr; unicode-bidi: isolate; }
+.pf-readable-gantt .gantt .bar { fill: #dbeafe !important; stroke: #84adff !important; stroke-width: 1; filter: drop-shadow(0 1px 1px rgb(16 24 40 / 10%)); }
+.pf-readable-gantt .gantt .bar-progress { fill: #84adff !important; }
+.pf-readable-gantt .gantt .pf-state-working .bar { fill: #c7d7fe !important; }
+.pf-readable-gantt .gantt .pf-state-review .bar { fill: #fef0c7 !important; stroke: #fec84b !important; }
+.pf-readable-gantt .gantt .pf-state-completed .bar { fill: #abefc6 !important; stroke: #47cd89 !important; }
+.pf-readable-gantt .gantt .pf-state-cancelled .bar { fill: #e4e7ec !important; stroke: #98a2b3 !important; }
+.pf-readable-gantt .gantt .pf-state-overdue .bar { fill: #fecdca !important; stroke: #f97066 !important; }
+.pf-readable-gantt .gantt .pf-selected .bar { stroke: var(--pf-primary) !important; stroke-width: 2; filter: drop-shadow(0 2px 3px rgb(37 99 235 / 22%)); }
+.pf-readable-gantt .gantt .arrow path { fill: none; stroke: #98a2b3; stroke-width: 1.4; opacity: .75; }
+.pf-readable-gantt .gantt .arrow path.pf-active-arrow { stroke: var(--pf-primary); stroke-width: 2; opacity: 1; }
+.pf-readable-gantt .gantt .grid-header { fill: var(--pf-surface); }
+.pf-readable-gantt .gantt .grid-row { fill: var(--pf-surface); }
+.pf-readable-gantt .gantt .grid-row:nth-child(even) { fill: var(--pf-subtle); }
+.pf-readable-gantt .gantt .row-line, .pf-readable-gantt .gantt .tick { stroke: var(--pf-border); }
+.pf-readable-gantt .gantt .tick.thick { stroke: color-mix(in srgb, var(--pf-border) 70%, #98a2b3 30%); }
+.pf-readable-gantt .gantt .today-highlight { fill: #eff6ff; opacity: .7; }
+.pf-readable-gantt .gantt .lower-text, .pf-readable-gantt .gantt .upper-text { fill: var(--pf-muted); font-size: 10px; }
+
+.pf-readable-gantt .pf-timeline .popup-wrapper { width: 280px; max-width: calc(100% - 24px); border: 1px solid #d0d5dd; border-radius: 12px; background: #fff !important; color: #1d2939 !important; box-shadow: 0 12px 30px rgb(16 24 40 / 18%); z-index: 10; pointer-events: none; }
+.pf-readable-gantt .pf-timeline .popup-wrapper .pointer { display: none; }
+.pf-readable-gantt .pf-gantt-popup { padding: 14px 16px; max-width: 300px; border-radius: 12px; background: #fff; color: #1d2939 !important; font-size: 11px; line-height: 1.7; }
+.pf-readable-gantt .pf-gantt-popup strong { display: block; margin-bottom: 4px; font-size: 12px; }
+.pf-readable-gantt .pf-gantt-popup p { margin: 4px 0; color: #667085 !important; }
+.pf-readable-gantt button:focus-visible, .pf-readable-gantt input:focus-visible { outline: 2px solid var(--pf-primary); outline-offset: 2px; }
+
+.gantt-view-mode { gap: 4px; padding: 3px; border: 1px solid var(--border-color, #e4e7ec); border-radius: 10px; background: var(--card-bg, #fff); }
+.gantt-view-mode .btn-view-mode { border: 0 !important; border-radius: 7px !important; background: transparent !important; color: var(--text-muted, #667085) !important; box-shadow: none !important; }
+.gantt-view-mode .btn-view-mode.btn-info { background: #eff6ff !important; color: #175cd3 !important; font-weight: 700; }
+.list-paging-area .pf-paging-label { display: inline-flex; align-items: center; padding-inline: 8px 4px; color: var(--text-muted, #667085); font-size: 10px; white-space: nowrap; }
+
+@media (max-width: 900px) {
+ .pf-readable-gantt .pf-gantt-toolbar { align-items: flex-start; }
+ .pf-readable-gantt .pf-gantt-tools { width: 100%; }
+ .pf-readable-gantt .pf-gantt-layout { grid-template-columns: minmax(400px, 1fr) 310px; }
+}
+
+@media (max-width: 620px) {
+ .gantt-modern.pf-readable-gantt { border-radius: 12px; }
+ .pf-readable-gantt .pf-gantt-toolbar { padding: 12px; gap: 10px; }
+ .pf-readable-gantt .pf-gantt-toolbar-copy { min-width: 100%; }
+ .pf-readable-gantt .pf-gantt-layout { min-width: 700px; grid-template-columns: minmax(390px, 1fr) 300px; }
+ .pf-readable-gantt .pf-task-row { gap: 8px; padding-inline: 9px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+ .pf-readable-gantt *, .pf-readable-gantt *::before, .pf-readable-gantt *::after { scroll-behavior: auto !important; transition: none !important; }
+}

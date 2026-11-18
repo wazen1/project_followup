@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "project_followup"
+version = "0.1.0"
+description = "Non-financial projects and committee task review for ERPNext"
+requires-python = ">=3.10"
+[tool.setuptools.packages.find]
+include = ["project_followup*"]
+[tool.setuptools.package-data]
+"*" = ["*.json", "*.txt", "*.js", "*.css"]
